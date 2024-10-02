@@ -21,7 +21,7 @@ const FileUpload = () => {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/files/upload', formData, {
+      const response = await axios.post('https://file-upload-cz4k.onrender.com/api/files/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -67,16 +67,16 @@ const FileUpload = () => {
         <div className="uploaded-file-container">
           <h3>Uploaded File:</h3>
           {file && file.type.startsWith('image/') && (
-            <img src={`http://localhost:5000/${uploadedFilePath}`} alt="Uploaded" style={{ width: '150px', height: '150px' }} />
+            <img src={`https://file-upload-cz4k.onrender.com/${uploadedFilePath}`} alt="Uploaded" style={{ width: '150px', height: '150px' }} />
           )}
           {file && file.type.startsWith('audio/') && (
-            <audio controls src={`http://localhost:5000/${uploadedFilePath}`} style={{ width: '150px' }} />
+            <audio controls src={`https://file-upload-cz4k.onrender.com/${uploadedFilePath}`} style={{ width: '150px' }} />
           )}
           {file && file.type.startsWith('video/') && (
-            <video controls src={`http://localhost:5000/${uploadedFilePath}`} style={{ width: '150px', height: '150px' }} />
+            <video controls src={`https://file-upload-cz4k.onrender.com/${uploadedFilePath}`} style={{ width: '150px', height: '150px' }} />
           )}
           {file && file.type === 'application/pdf' && (
-            <iframe src={`http://localhost:5000/${uploadedFilePath}`} title="PDF" style={{ width: '150px', height: '150px' }} />
+            <iframe src={`https://file-upload-cz4k.onrender.com/${uploadedFilePath}`} title="PDF" style={{ width: '150px', height: '150px' }} />
           )}
         </div>
       )}
